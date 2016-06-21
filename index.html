@@ -8,6 +8,15 @@
 <!--  -->
 <body ng-controller="TodomvcCtrl">
   <h1> To Do List</h1>
+
+  <!-- 새로운 todo 입력 -->
+  <form ng-submit="add(newTodoTitle)">
+      <input type="text" placeholder="Type todo..." autofocus
+      ng-model="newTodoTitle">
+      <button type="submit">add</button>
+
+  </form>
+
   <!-- todos 배열 길이 만큼 반복 -->
   <div ng-repeat="todo in todos">
     <input type="checkbox" ng-model="todo.completed">

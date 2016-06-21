@@ -16,6 +16,24 @@ angular.module('todomvc')
     }
   ];
 
+  $scope.add = function(newTodoTitle){
+    // console.log('add() newTodoTitle:' , newTodoTitle);
+    newTodoTitle = newTodoTitle.trim();
+    if(!newTodoTitle) return;
+    // create id
+    var newId = $scope.todos.length === 0 ?
+        1 : $scope.todos[$scope.todos.length-1].id + 1;
+    // todo object 생성
+    var newTodo = {
+      id: newId,
+      title: newTodoTitle,
+      completed: false
+    }
+    // todos 배열에 todo 추가
+    $scope.todos.push(newTodo);
+    $scope.newTodoTitle = "";
+
+  }
   $scope.remove = function(todoId){
     // console.log('remove() todoId : ' , todoId);
     // find index
