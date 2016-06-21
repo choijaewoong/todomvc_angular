@@ -24,7 +24,7 @@
 
     <!-- todos 배열 길이 만큼 반복 -->
     <ul class="list-unstyled">
-      <li ng-repeat="todo in todos">
+      <li ng-repeat="todo in todos | filter: filter">
         <div class="input-group">
           <span class="input-group-addon">
             <input type="checkbox" ng-model="todo.completed">
@@ -36,9 +36,18 @@
         </div>
       </li>
     </ul>
+
+    <!-- 핕터 버튼  -->
+    <div class="btn-group" role="group" aria-label="...">
+      <button type="button" class="btn btn-default">Completed</button>
+      <button type="button" class="btn btn-default">Active</button>
+      <button type="button" class="btn btn-default">All</button>
+      <button type="button" class="btn btn-default">Clear Completed</button>
+    </div>
+
     <!-- json 형식 출력 해보기 -->
     <pre> {{todos | json}} </pre>
-  </div>
+  </div><!-- container -->
 
   <!-- 앵귤러 로딩 -->
   <script src="node_modules/angular/angular.js"></script>

@@ -16,6 +16,9 @@ angular.module('todomvc')
     }
   ];
 
+  // 필터 변수 추가
+  $scope.filter = {completed: false};
+
   $scope.add = function(newTodoTitle){
     // console.log('add() newTodoTitle:' , newTodoTitle);
     newTodoTitle = newTodoTitle.trim();
