@@ -25,7 +25,9 @@
     <!-- todos 배열 길이 만큼 반복 -->
     <ul class="list-unstyled">
       <li ng-repeat="todo in todos | filter: filter">
-        <div class="input-group">
+        <!-- 디렉티브 -->
+        <todo-item data="todo" on-remove="remove(todoId)"></todo-item>
+        <!-- <div class="input-group">
           <span class="input-group-addon">
             <input type="checkbox" ng-model="todo.completed">
           </span>
@@ -33,7 +35,7 @@
           <span class="input-group-btn">
             <button class="btn btn-danger" ng-click="remove(todo.id)">remove</button>
           </span>
-        </div>
+        </div> -->
       </li>
     </ul>
 
@@ -59,6 +61,8 @@
   <script src="js/app.js"></script>
   <!-- 컨트롤러 로딩 -->
   <script src="js/controllers/TodomvcCtrl.js"></script>
+  <!-- 디렉티브 로딩 -->
+  <script src="js/directives/todoItem.js"></script>
 
 </body>
 </html>
