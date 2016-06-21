@@ -45,6 +45,34 @@ app.post('/api/todos', function(req, res){
   res.send('success');
 });
 
+app.delete('/api/todos/:id', function(req, res){
+  // find index
+  var findIndex = todos.findIndex(function(todo){
+    return todo.id.toString() === req.params.id;
+  });
+  // remove from array
+  if(findIndex > -1){
+    todos.splice(findIndex, 1);
+  }
+  res.json(todos);
+});
+
+app.put('/api/todos/:id', function(req, res){
+  // find index
+  var findIndex = todos.findIndex(function(todo){
+    return todo.id.toString() === req.params.id;
+  });
+  // remove from array
+  if(findIndex > -1){
+    todos[findIndex].title = req.body.title;
+    todos[findIndex].completed = req.body.completed;
+    if(typeof req.body.completed === 'string'){
+      todos[findIndex].completed = (req.body.completed === 'true');
+    }
+  }
+  res.json(todos[findIndex]);
+});
+
 app.get('/', function (req, res) {
   res.send('Hello World!');
 });
