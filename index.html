@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!-- ng-app으로 todomvc 앵귤러 모듈 사용을 브라우저에게 알림-->
+<html lang="en" ng-app="todomvc">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular | TodoMVC</title>
+</head>
+<!--  -->
+<body ng-controller="TodomvcCtrl">
+  <h1>{{message}}</h1>
+
+  <!-- 앵귤러 로딩 -->
+  <script src="node_modules/angular/angular.js"></script>
+  <!-- 모듈 로딩 -->
+  <script src="js/app.js"></script>
+  <!-- 컨트롤러 로딩 -->
+  <script src="js/controllers/TodomvcCtrl.js"></script>
+
+</body>
+</html>
