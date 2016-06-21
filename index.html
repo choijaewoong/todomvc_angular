@@ -39,10 +39,14 @@
 
     <!-- 핕터 버튼  -->
     <div class="btn-group" role="group" aria-label="...">
-      <button type="button" class="btn btn-default">Completed</button>
-      <button type="button" class="btn btn-default">Active</button>
-      <button type="button" class="btn btn-default">All</button>
-      <button type="button" class="btn btn-default">Clear Completed</button>
+      <button type="button" class="btn btn-default"
+              ng-click="filter={completed: true}">Completed</button>
+      <button type="button" class="btn btn-default"
+              ng-click="filter={completed: false}">Active</button>
+      <button type="button" class="btn btn-default"
+              ng-click="filter={}">All</button>
+      <button type="button" class="btn btn-default"
+              ng-click="clearCompleted()">Clear Completed</button>
     </div>
 
     <!-- json 형식 출력 해보기 -->

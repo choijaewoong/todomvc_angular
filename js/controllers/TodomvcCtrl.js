@@ -17,7 +17,7 @@ angular.module('todomvc')
   ];
 
   // 필터 변수 추가
-  $scope.filter = {completed: false};
+  $scope.filter = {};
 
   $scope.add = function(newTodoTitle){
     // console.log('add() newTodoTitle:' , newTodoTitle);
@@ -47,5 +47,18 @@ angular.module('todomvc')
     if(findIndex > -1){
       $scope.todos.splice(findIndex, 1);
     }
+  }
+
+  $scope.clearCompleted= function(){
+    // for (i=0; i < $scope.todos.length; i++) {
+    //   if($scope.todos[i].completed === true){
+    //     $scope.todos.splice(i, 1);
+    //   }
+    // }
+    //incompleted
+    var incompletedTodos = $scope.todos.filter(function(todo){
+      return todo.completed === false;
+    });
+    $scope.todos = incompletedTodos;
   }
 });
